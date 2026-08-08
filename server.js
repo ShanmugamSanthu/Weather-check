@@ -20,12 +20,11 @@ app.get("/", (req, res) => {
   res.render("index", { toRenderData });
 });
 
-app.post("/weather", async (req, res, next) => {
+app.post("/weather", async (req, res) => {
   const city = req.body.usercity;
   const selectedTime = req.body.selectedTime;
 
   const coordinates = await getCoordinates(city);
-  console.log(coordinates);
   const weatherData = await getWeatherData(coordinates);
   const selectedHour = getSelectedHour(selectedTime);
 
