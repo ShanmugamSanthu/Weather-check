@@ -21,7 +21,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/weather", async (req, res, next) => {
-  console.log(req.body);
   const city = req.body.usercity;
   const selectedTime = req.body.selectedTime;
 
