@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Today</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../Weather check/pic asset/title pic.png"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Weather Report Live</h1>
+    <form method="post" action="/weather">
+      <h3>
+        <input
+          name="usercity"
+          type="text"
+          id="cityInput"
+          placeholder="Enter City Name"
+        />
+      </h3>
+      <h3>
+        <input type="time" name="selectedTime" id="userTime" />
+      </h3>
+      <button id="getWeather" name="submitBtn">Get Weather</button>
+    </form>
+
+    <h3 id="stats">Current Stats</h3>
+
+    <ul class="reportDetails">
+      <p id="cityLabel">City : <%= toRenderData.city%></p>
+      <p>Temperature : <%= toRenderData.temperature %></p>
+      <p>Humidity : <%= toRenderData.humidity %></p>
+      <p>Rain : <%= toRenderData.rain %></p>
+      <p>Wind Speed : <%= toRenderData.windSpeed %></p>
+    </ul>
+
+    <footer>Version 1.1 In Development</footer>
+  </body>
+</html>
